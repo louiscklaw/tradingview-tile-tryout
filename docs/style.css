@@ -10,14 +10,15 @@ a {
 
 .app {
     display: grid;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 0.1fr));
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    background-color: #050505;
 }
 
 .element {
     width: 100%;
-    height: 210px;
+    /* height: 210px; */
     background-color: #050505;
 }
 
