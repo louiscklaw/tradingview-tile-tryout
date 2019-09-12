@@ -9,6 +9,8 @@
 
 a {
     color: #999999;
+    padding-top:5px;
+    padding-bottom:3px;
 }
 
 .app {
@@ -21,10 +23,11 @@ a {
 
 .element {
     width: 100%;
-    height: 220px;
+
     background-color: #050505;
 }
 
 .test_container {
     text-align: center;
+    height: 250px;
 }
