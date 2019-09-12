@@ -1,4 +1,5 @@
 
+var url = 'https://raw.githubusercontent.com/louiscklaw/tradingview-tile-tryout/master/docs/settings.json';
 var stock_list = await (await fetch(url)).json();
 
 var stock_tvid = {};
