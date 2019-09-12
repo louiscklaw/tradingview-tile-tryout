@@ -1,6 +1,12 @@
 [
     "DJ:DJI",
     "SPX",
+    "NASDAQ:SWIR",
+    "NASDAQ:TXN",
     "NASDAQ:AAPL",
-    "NASDAQ:SWIR"
+    "NASDAQ:MSFT",
+    "NASDAQ:FB",
+    "NASDAQ:AMZN",
+    "NASDAQ:GOOGL",
+    "NYSE:STM",
 ]
