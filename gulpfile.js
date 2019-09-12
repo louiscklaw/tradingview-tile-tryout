@@ -5,7 +5,7 @@ const minifyCSS = require('gulp-csso');
 const concat = require('gulp-concat');
 
 function html() {
-  return src('src/pug/*.pug')
+  return src('src/pug/index.pug')
     .pipe(pug())
     .pipe(dest('./docs'))
 }

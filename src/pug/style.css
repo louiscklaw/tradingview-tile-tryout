@@ -6,6 +6,7 @@
 
 body {
     background-color: #050505;
+    font-family: sans-serif;
 }
 
 a {
@@ -44,5 +45,6 @@ a {
 }
 
 .stock_link {
+    padding-top: 5px;
     padding-bottom: 3px;
 }
