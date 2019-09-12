@@ -10,7 +10,7 @@ body {
 }
 
 a {
-    color: #999999;
+    color: #e0e0e0;
 }
 
 .app {
@@ -32,19 +32,40 @@ a {
 }
 
 .footer {
-    background: #090909;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     height: 50px;
+    backdrop-filter: blur(20px);
+
 }
 
 .link_container {
-    height:30px;
+    height: 30px;
 }
 
 .stock_link {
     padding-top: 10px;
     padding-bottom: 4px;
+}
+
+.footer_container {
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.Aligner-item {
+    max-width: 50%;
+}
+
+.Aligner-item--top {
+    align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+    align-self: flex-end;
 }

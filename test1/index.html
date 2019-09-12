@@ -14,21 +14,43 @@
             box-sizing: border-box;
         }
 
+        body {
+            background: url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat;
+            background-size: cover;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
 
-        .app {
-            background-color: green;
-            height: 1000px;
+        .container {
+            width: 30rem;
+            height: 20rem;
+            box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, .15);
+
+            backdrop-filter: blur(5px);
         }
 
 
-
+        .footer {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            backdrop-filter: blur(20px);
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="app">
-        app body
+    <div class="container">
+        <div class="box1">
+            <div class="box2"></div>
+        </div>
     </div>
 
     <footer class="footer">text</footer>
