@@ -11,15 +11,15 @@ function html() {
 }
 
 function css() {
-  return src('client/templates/*.less')
+  return src('src/pug/*.css')
     .pipe(less())
     .pipe(minifyCSS())
     .pipe(dest('./docs/css'))
 }
 
 function js() {
-  return src('client/javascript/*.js', { sourcemaps: true })
-    .pipe(concat('app.min.js'))
+  return src('src/pug/*.js', { sourcemaps: true })
+    // .pipe(concat('app.min.js'))
     .pipe(dest('./docs/js', { sourcemaps: true }))
 }
 
