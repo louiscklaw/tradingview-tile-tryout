@@ -11,12 +11,16 @@ var stock_cell_table = {};
 var cell_template = `
 <div id="$tv_id$_cell" class="element">
     <div class="test_container">
-        <a href="www.google.com">$stock_name$</a>
-        <a href="www.google.com">google</a>
-        <a href="www.yahoo.com">yahoo</a>
-        <a href="www.aastocks.com">aastocks</a>
+        <div class="link_container">
+        <div class="stock_link">
+            <a href="www.google.com">$stock_name$</a>
+            <a href="www.google.com">google</a>
+            <a href="www.yahoo.com">yahoo</a>
+            <a href="www.aastocks.com">aastocks</a>
+        </div>
         <div class="tradingview-widget-container">
             <div id="$tv_id$"></div>
+        </div>
         </div>
     </div>
 </div>`;
