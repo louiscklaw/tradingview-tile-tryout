@@ -1,7 +1,5 @@
 
-var stock_list = [
-    "DJ:DJI", "NASDAQ:AAPL", "NASDAQ:SWIR"
-];
+var stock_list = await (await fetch(url)).json();
 
 var stock_tvid = {};
 
@@ -9,12 +7,12 @@ stock_list.forEach( x => {
     stock_tvid[x] = 'tv_'+makeid( 10 );
 });
 
-
 var stock_cell_table = {};
 
 var cell_template = `
 <div id="$tv_id$_cell" class="element">
     <div class="test_container">
+        <a href="www.google.com">$stock_name$</a>
         <a href="www.google.com">google</a>
         <a href="www.yahoo.com">yahoo</a>
         <a href="www.aastocks.com">aastocks</a>
@@ -46,6 +44,7 @@ function gen_tradingview_html ( colon_stock_code ) {
 function render_html ( colon_stock_code, tv_id ) {
     console.log( tv_id );
     return cell_template
+        .replace( /\$stock_name\$/g, colon_stock_code)
         .replace( /\$id\$/g, tv_id )
         .replace( /\$tv_id\$/g, tv_id );
 }
