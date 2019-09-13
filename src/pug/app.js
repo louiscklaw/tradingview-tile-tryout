@@ -54,7 +54,7 @@ function render_html( colon_stock_code, tv_id ) {
 
 function render_tv_script( colon_stock_code, tv_id ) {
     return new TradingView.widget( {
-        "width": 300,
+        "width": '100%',
         "height": 200,
         "symbol": colon_stock_code,
         "interval": "D",
