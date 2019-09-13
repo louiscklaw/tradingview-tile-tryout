@@ -4,6 +4,11 @@ const less = require('gulp-less');
 const minifyCSS = require('gulp-csso');
 const concat = require('gulp-concat');
 
+function json () {
+  return src( 'src/pug/settings.json' )
+    .pipe( dest( './docs' ) );
+}
+
 function html() {
   return src('src/pug/index.pug')
     .pipe(pug())
@@ -27,4 +32,4 @@ exports.js = js;
 exports.css = css;
 exports.html = html;
 
-exports.default = parallel(html, css, js);
+exports.default = parallel(html, css, js, json);
