@@ -112,6 +112,15 @@ a {
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css");
 
 
+.link_text_pinterest_bg{
+    background-color: #c23616;
+}
+
+.link_box_pinterest{
+    background-color: #e84118;
+    z-index:4;
+}
+
 .link_text_linkedin_bg{
     background-color: #40739e;
 }
