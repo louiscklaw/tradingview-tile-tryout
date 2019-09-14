@@ -1,16 +1,20 @@
+
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
+    font-family: "Souce Sans Pro", sans-serif;
+    color: white;
+    font-size: 1em;
 }
 
 body {
     background-color: #050505;
-    font-family: sans-serif;
 }
 
 a {
     color: #e0e0e0;
+    text-decoration: none;
 }
 
 .app {
@@ -54,8 +58,15 @@ a {
     /* background-color: grey; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 50px;
+    /* background-color: #555555; */
+
+}
+
+.footer_right{
+    display: flex;
+    flex-flow: row-reverse;
 }
 
 .Aligner-item {
@@ -68,4 +79,155 @@ a {
 
 .Aligner-item--bottom {
     align-self: flex-end;
+}
+
+.footer_right {
+    /* background-color: #ff0000; */
+    display: flex;
+    flex-flow: row;
+}
+
+.footer_right i {
+    color: #EEEEEE;
+}
+
+.github_link i:hover {
+    /* color: #FF0000; */
+}
+
+.github_link i:hover a{
+    display: block;
+    color: #FF0000;
+}
+
+.github_link a {
+    display: none;
+}
+
+
+
+/* footer social link */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css");
+
+
+.link_text_linkedin_bg{
+    background-color: #40739e;
+}
+
+.link_box_linkedin{
+    background-color: #487eb0;
+    z-index:4;
+}
+
+.link_text_codepen_bg{
+    background-color: #2f3640;
+}
+
+.link_box_codepen{
+    background-color: #353b48;
+    z-index:5;
+}
+
+.link_text_portfolio_bg{
+    background-color: #718093;
+}
+
+.link_box_portfolio{
+    background-color: #7f8fa6;
+    z-index:6;
+}
+
+.link_text_whatsapp_bg{
+    background-color: #44bd32;
+}
+
+.link_box_whatsapp{
+    background-color: #4cd137;
+    z-index:7;
+}
+
+.link_text_github_bg{
+    background-color: #353b48;
+}
+
+.link_box_github{
+    background-color: #718093;
+    z-index:8;
+}
+
+.link_text_fb_bg {
+    background-color: #40739e;
+}
+
+.link_box_fb{
+    background-color: #487eb0;
+    z-index:9;
+}
+
+.link_box:hover{
+    width: 200px;
+}
+
+.link_box {
+    display: block;
+    width: 50px;
+    /* width: 50px; */
+    height: 50px;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.box_container{
+    width:50px;
+    height: 50px;
+
+    display:flex;
+    flex-flow: row;
+    justify-content: flex-start;
+
+}
+
+.link_text_container{
+    position:relative;
+    left: 50px;
+
+    height: 50px;
+    width: 150px;
+    display:flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.link_text_background{
+    width: 150px;
+    height: 50px;
+
+    display:flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.link_text{
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    /* left:50px; */
+
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+
+.link_icon{
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
 }
