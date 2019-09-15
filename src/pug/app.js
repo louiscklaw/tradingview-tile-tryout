@@ -92,6 +92,10 @@ function start_render_table (stock_list) {
 
 }
 
+function helloworld () {
+    alert( 'helloworld' );
+}
+
 window.onload = function () {
 
     var xhttp = new XMLHttpRequest();

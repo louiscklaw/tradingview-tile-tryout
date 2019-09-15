@@ -7,7 +7,8 @@
 @link-color:        #428bca; // sea blue
 @link-color-hover:  darken(@link-color, 10%);
 @dimmed-white: #e0e0e0;
-@z_index_top: 99;
+@z_touchable: 99;
+@z_menu: 98;
 
 // Usage
 
@@ -263,7 +264,7 @@ body {
 }
 
 .link_to_home {
-  z-index: @z_index_top;
+  z-index: @z_touchable;
 }
 
 button{
@@ -276,13 +277,22 @@ button{
 }
 
 .side-menu-right {
-  z-index: @z_index_top;
+  z-index: @z_touchable;
 }
 
 .menu-button {
   width: 50px;
   height: 50px;
   background-color: #f1c40f;
+}
+
+.link_to_home a{
+  text-shadow: #000 0px 0 5px;
+}
+
+.footer {
+  box-shadow: 0px 0px 10px #2c3e50;
+
 }
 
 /* start of desktop styles */
@@ -302,7 +312,7 @@ button{
     display:none;
   }
   .link_icon button{
-    z-index: @z_index_top;
+    z-index: @z_touchable;
   }
 
   .footer_left {
