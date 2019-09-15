@@ -13,17 +13,14 @@ function toggle_menu_body () {
     if ( menu_visible ) {
         document.querySelectorAll( ".menu-toggle-show-hide" )
             .forEach( ( item ) => {
-                item.style.visibility = 'visible';
-                item.style.opacity = '1';
-
-            })
+                item.classList.remove( 'menu-hide' );
+            } );
 
     } else {
         document.querySelectorAll( '.menu-toggle-show-hide' )
             .forEach( ( item ) => {
-                item.style.visibility = 'hidden';
-                item.style.opacity = '0';
-            })
+                item.classList.add( 'menu-hide' );
+            } );
     }
 
 }
