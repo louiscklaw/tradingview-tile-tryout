@@ -16,7 +16,7 @@ function html() {
 }
 
 function css() {
-  return src('src/pug/*.css')
+  return src('src/pug/*.less')
     .pipe(less())
     .pipe(minifyCSS())
     .pipe(dest('./docs/css'))
@@ -28,8 +28,13 @@ function js() {
     .pipe(dest('./docs/js', { sourcemaps: true }))
 }
 
+function assets () {
+  return src( 'src/img/*' )
+    .pipe( dest( './docs/img' ) );
+}
+
 exports.js = js;
 exports.css = css;
 exports.html = html;
 
-exports.default = parallel(html, css, js, json);
+exports.default = parallel(html, css, js, json, assets);
