@@ -6,19 +6,20 @@
 // Variables
 @link-color:        #428bca; // sea blue
 @link-color-hover:  darken(@link-color, 10%);
+@dimmed-white: #e0e0e0;
 
 // Usage
 
 a {
-  color: #e0e0e0;
+  color: @dimmed-white;
   text-decoration: none;
 }
 
 a:hover {
-  color: @link-color-hover;
+  color: @dimmed-white;
 }
 .widget {
-  color: #fff;
+  color: @dimmed-white;
   background: @link-color;
 }
 
