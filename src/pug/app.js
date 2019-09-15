@@ -82,18 +82,14 @@ function render_table() {
     return gen_table().join( '' );
 }
 
-function start_render_table (stock_list) {
+function start_render_table( stock_list ) {
 
     document.querySelector( '#stock_table' ).innerHTML = render_table();
     stock_list.forEach( x => {
         console.log( x );
-        render_tv_script( x, stock_tvid[x] );
+        render_tv_script( x, stock_tvid[ x ] );
     } );
 
-}
-
-function helloworld () {
-    alert( 'helloworld' );
 }
 
 window.onload = function () {
@@ -108,7 +104,7 @@ window.onload = function () {
             } );
             console.log( 'xhr done' );
 
-            start_render_table(stock_list);
+            start_render_table( stock_list );
 
         }
     };

@@ -4,8 +4,8 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css");
 
 // Variables
-@link-color:        #428bca; // sea blue
-@link-color-hover:  darken(@link-color, 10%);
+@link-color: #428bca; // sea blue
+@link-color-hover: darken(@link-color, 10%);
 @dimmed-white: #e0e0e0;
 @z_touchable: 99;
 @z_menu: 98;
@@ -29,6 +29,7 @@ a {
 a:hover {
   color: @dimmed-white;
 }
+
 .widget {
   color: @dimmed-white;
   background: @link-color;
@@ -38,10 +39,12 @@ a:hover {
 body {
   background-color: #050505;
 
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/bg.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/bg.jpg');
   /* background-position: center; Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  /* Resize the background image to cover the entire container */
   /* backdrop-filter: brightness(50%); */
 
 
@@ -95,7 +98,7 @@ body {
 
 }
 
-.footer_right{
+.footer_right {
   display: flex;
   flex-flow: row-reverse;
 }
@@ -126,7 +129,7 @@ body {
   /* color: #FF0000; */
 }
 
-.github_link i:hover a{
+.github_link i:hover a {
   display: block;
   color: #FF0000;
 }
@@ -135,69 +138,69 @@ body {
   display: none;
 }
 
-.link_text_pinterest_bg{
+.link_text_pinterest_bg {
   background-color: #c23616;
 }
 
-.link_box_pinterest{
+.link_box_pinterest {
   background-color: #e84118;
-  z-index:4;
+  z-index: 4;
 }
 
-.link_text_linkedin_bg{
+.link_text_linkedin_bg {
   background-color: #40739e;
 }
 
-.link_box_linkedin{
+.link_box_linkedin {
   background-color: #487eb0;
-  z-index:4;
+  z-index: 4;
 }
 
-.link_text_codepen_bg{
+.link_text_codepen_bg {
   background-color: #2f3640;
 }
 
-.link_box_codepen{
+.link_box_codepen {
   background-color: #353b48;
-  z-index:5;
+  z-index: 5;
 }
 
-.link_text_portfolio_bg{
+.link_text_portfolio_bg {
   background-color: #718093;
 }
 
-.link_box_portfolio{
+.link_box_portfolio {
   background-color: #7f8fa6;
-  z-index:6;
+  z-index: 6;
 }
 
-.link_text_whatsapp_bg{
+.link_text_whatsapp_bg {
   background-color: #44bd32;
 }
 
-.link_box_whatsapp{
+.link_box_whatsapp {
   background-color: #4cd137;
-  z-index:7;
+  z-index: 7;
 }
 
-.link_text_github_bg{
+.link_text_github_bg {
   background-color: #353b48;
 }
 
-.link_box_github{
+.link_box_github {
   background-color: #718093;
-  z-index:8;
+  z-index: 8;
 }
 
 .link_text_fb_bg {
   background-color: #40739e;
 }
 
-.link_box_fb{
+.link_box_fb {
   background-color: #487eb0;
 }
 
-.link_box:hover{
+.link_box:hover {
   width: 200px;
 }
 
@@ -210,39 +213,39 @@ body {
   overflow: hidden;
 }
 
-.box_container{
-  width:50px;
+.box_container {
+  width: 50px;
   height: 50px;
 
-  display:flex;
+  display: flex;
   flex-flow: row;
   justify-content: flex-start;
 
 }
 
-.link_text_container{
-  position:relative;
+.link_text_container {
+  position: relative;
   left: 50px;
 
   height: 50px;
   width: 150px;
-  display:flex;
+  display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
 }
 
-.link_text_background{
+.link_text_background {
   width: 150px;
   height: 50px;
 
-  display:flex;
+  display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
 }
 
-.link_text{
+.link_text {
   width: 150px;
   height: 50px;
   position: absolute;
@@ -250,10 +253,10 @@ body {
 
   display: flex;
   justify-content: flex-start;
-  align-items:center;
+  align-items: center;
 }
 
-.link_icon{
+.link_icon {
   width: 50px;
   height: 50px;
 
@@ -267,7 +270,7 @@ body {
   z-index: @z_touchable;
 }
 
-button{
+button {
   border: 0;
   background: none;
   box-shadow: none;
@@ -286,7 +289,7 @@ button{
   background-color: #f1c40f;
 }
 
-.link_to_home a{
+.link_to_home a {
   text-shadow: #000 0px 0 5px;
 }
 
@@ -303,40 +306,45 @@ button{
 }
 
 @media screen and (max-width: 767px) {
+
   /* start of medium tablet styles */
-  .link_box:hover{
+  .link_box:hover {
     width: 50px;
     cursor: pointer;
   }
-  .link_to_home{
-    display:none;
+
+  .link_to_home {
+    display: none;
   }
-  .link_icon button{
+
+  .link_icon button {
     z-index: @z_touchable;
   }
 
   .footer_left {
-    order:0;
+    order: 0;
   }
 
   .footer_right {
-    order:1;
+    order: 1;
   }
-  .footer_mid{
-    order:2;
+
+  .footer_mid {
+    order: 2;
   }
+
   .link_text_container {
-    display:none;
+    display: none;
   }
-  body{
+
+  body {
     background-color: black;
-    background-image:none;
+    background-image: none;
   }
 }
 
 @media screen and (max-width: 479px) {
-  /* start of phone styles */
-  .link_box:hover {
 
-  }
+  /* start of phone styles */
+  .link_box:hover {}
 }
