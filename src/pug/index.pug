@@ -1,23 +1,33 @@
 doctype html
 html(lang='en')
   head
-    link(rel="preconnect", href="https://s.tradingview.com")
-    link(rel="dns-prefetch", href="https://s.tradingview.com")
-    link(rel="preload", href="js/app.js")
-
     include gtag.js
     include meta.pug
+
+    link(rel="preconnect", href="https://s.tradingview.com")
+    link(rel="dns-prefetch", href="https://s.tradingview.com")
+
+    link(rel="preload", href="js/app.js", as="script")
     link(rel="stylesheet",href="css/style.css")
     script(type="text/javascript",src="https://s3.tradingview.com/tv.js")
 
     title A tradingview dashboard
   body
     div(class="side-menu-right")
-      button(class="menu-button" onclick="helloworld()")
+      div(class="menu-header")
+        button(class="menu-button" onclick="toggle_menu_body()")
+        .menu-caption-container.menu-toggle-show-hide
+          p(class="menu-caption") MENU
+      div(class="menu-container menu-toggle-show-hide")
+        div(class="menu_item1")
+        div(class="menu_item2")
+        div(class="menu_item3")
+        div(class="menu_iteu4")
+        div(class="menu_item5")
 
     div(class="app",id="stock_table")
 
-    script(src="js/app.js")
+    //- script(src="js/app.js")
     script(src="js/test.js")
 
     footer.footer

@@ -7,8 +7,23 @@
 @link-color: #428bca; // sea blue
 @link-color-hover: darken(@link-color, 10%);
 @dimmed-white: #e0e0e0;
-@z_touchable: 99;
-@z_menu: 98;
+@z-touchable: 99;
+@z-menu: 98;
+
+@low-blur: blur(10px);
+@mid-blur: blur(25px);
+@high-blur: blur(55px);
+
+@default-text-shadow: #000000 0px 0 5px;
+
+@default-box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.5);
+
+@menu-toggle-button-width: 50px;
+@menu-toggle-button-height: 50px;
+
+@menu-width: 400px;
+
+
 
 // Usage
 
@@ -72,7 +87,7 @@ body {
   right: 0;
   bottom: 0;
   height: 50px;
-  backdrop-filter: blur(20px);
+  backdrop-filter: @mid-blur;
 
 }
 
@@ -326,7 +341,7 @@ body {
 }
 
 .link_to_home {
-  z-index: @z_touchable;
+  z-index: @z-touchable;
 }
 
 button {
@@ -341,28 +356,85 @@ button {
 }
 
 .side-menu-right {
-  z-index: @z_touchable;
+  z-index: @z-touchable;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+
+  display: flex;
+  flex-flow: column;
+
+  width: @menu-width;
+  height: 100vh;
+}
+
+.menu-header {
+  width:100%;
+  height: @menu-toggle-button-height;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+
 }
 
 .menu-button {
   width: 50px;
   height: 50px;
   background-color: #f1c40f;
+
+  z-index: @z-touchable;
+}
+
+.menu-caption-container{
+  width: 100%;
+  height: @menu-toggle-button-height;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-left: 20px;
+}
+
+.menu-caption {
+  color: white;
+  font-size: 2em;
+
+  display: block;
+
+  z-index: @z-menu;
+}
+
+
+
+
+.menu-container {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top:0px;
+
+  backdrop-filter: @high-blur;
+  box-shadow: @default-box-shadow;
 }
 
 .link_to_home a {
-  text-shadow: #000 0px 0 5px;
+  text-shadow: @default-text-shadow;
 }
 
 .footer {
-  box-shadow: 0px 0px 10px #2c3e50;
+  box-shadow: @default-box-shadow;
 
 }
 
-.side-menu-right{
+.side-menu-right {
   position: absolute;
-  top:0px;
-  left:0px;
+  top: 0px;
+  left: 0px;
 
 }
 
@@ -386,7 +458,7 @@ button {
   }
 
   .link_icon button {
-    z-index: @z_touchable;
+    z-index: @z-touchable;
   }
 
   .footer_left {
@@ -411,8 +483,4 @@ button {
   }
 }
 
-@media screen and (max-width: 479px) {
-
-  /* start of phone styles */
-  .link_box:hover {}
-}
+@media screen and (max-width: 479px) {}
