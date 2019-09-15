@@ -14,20 +14,28 @@ html(lang='en')
     title A tradingview dashboard
   body
     div(class="side-menu-right")
-      div(class="menu-header")
-        button(class="menu-button" onclick="toggle_menu_body()")
-        .menu-caption-container.menu-toggle-show-hide
-          p(class="menu-caption") MENU
-      ul(class="menu-container menu-toggle-show-hide")
-        li(class="menu-item1") item 1
-        li(class="menu-item2") item 2
-        li(class="menu-item3") item 3
-        li(class="menu-item4") item 4
-        li(class="menu-item5") item 5
+
+      div(class="side-menu-container")
+        div(class="menu-header")
+          button(class="menu-button")
+          .menu-caption-container
+            p(class="menu-caption") MENU
+        div(class="menu-body")
+          ul
+            li(class="menu-item1")
+              p.item-text item 1
+            li(class="menu-item2")
+              p.item-text item 2
+            li(class="menu-item3")
+              p.item-text item 3
+            li(class="menu-item4")
+              p.item-text item 4
+            li(class="menu-item5")
+              p.item-text item 5
 
     div(class="app",id="stock_table")
 
-    //- script(src="js/app.js")
+    script(src="js/app.js")
     script(src="js/test.js")
 
     footer.footer
