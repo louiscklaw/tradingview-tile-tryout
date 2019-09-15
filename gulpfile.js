@@ -23,7 +23,7 @@ function css() {
 }
 
 function js() {
-  return src('src/pug/app.js', { sourcemaps: true })
+  return src('src/pug/*.js', { sourcemaps: true })
     // .pipe(concat('app.min.js'))
     .pipe(dest('./docs/js', { sourcemaps: true }))
 }
