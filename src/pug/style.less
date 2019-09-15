@@ -262,6 +262,10 @@ body {
   align-items: center;
 }
 
+.link_to_home {
+  z-index: @z_index_top;
+}
+
 button{
   border: 0;
   background: none;
@@ -291,6 +295,20 @@ button{
   }
   .link_icon button{
     z-index: @z_index_top;
+  }
+
+  .footer_left {
+    order:0;
+  }
+
+  .footer_right {
+    order:1;
+  }
+  .footer_mid{
+    order:2;
+  }
+  .link_text_container {
+    display:none;
   }
 }
 
