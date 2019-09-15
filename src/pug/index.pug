@@ -17,8 +17,8 @@ html(lang='en')
     div(class="side-menu-right")
       button(class="menu-button" onclick="helloworld()")
 
-    script(src="js/app.js")
-    //- script(src="js/test.js")
+    //- script(src="js/app.js")
+    script(src="js/test.js")
 
     footer.footer
       .footer_container
@@ -29,6 +29,7 @@ html(lang='en')
         .footer_right
       .footer_container(style="position: relative; top: -50px;")
         .footer_left
+          include share_and_like.pug
         .footer_mid
         .footer_right
           include footer.html
