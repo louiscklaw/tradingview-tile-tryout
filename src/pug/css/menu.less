@@ -11,7 +11,7 @@
 
     display: flex;
 
-    transition: 0.3s;
+    transition: 0.3s ease-in;
 }
 
 .nav-menu-active {
@@ -25,7 +25,7 @@
     top: 0px;
     left: 0px;
 
-    transition: 0.3s;
+    transition: 0.3s ease-in;
 
     background-color: rgba(20, 20, 20, 0.3);
 }
@@ -57,22 +57,29 @@
     top: 0px;
     left: @menu-width;
 
-    width: 0%;
-    height: 0%;
-    background-color: rgba(20, 20, 20, 0.9);
+    width: calc(100% - @menu-width);
+    height: 100vh;
+    background-color: rgba(20, 20, 20, 0.4);
 
     cursor: pointer;
     z-index: @z-touchable;
 
     backdrop-filter: @mid-blur;
+
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition: 0.1s;
 }
 
 .nav-empty-active {
     width: calc(100% - @menu-width);
     height: 100vh;
+
+    visibility: visible;
+    opacity: 1;
 }
-
-
 
 .menu-caption {
     position: relative;
