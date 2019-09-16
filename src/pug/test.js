@@ -43,6 +43,14 @@ function clickLogout() {
     hideMenu();
 }
 
+function showAbout () {
+    hideMenu();
+    console.log( "show about" );
+
+    document.querySelector( '.dialog-about-container' ).classList.add("show-dialog");
+
+}
+
 // true=showmenu, false=hidemenu
 const menu_show = true;
 const menu_hide = false;

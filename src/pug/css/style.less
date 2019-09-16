@@ -7,6 +7,7 @@
 
 @import "menu.less";
 @import "footer.less";
+@import "dialog.less";
 
 * {
   padding: 0px;
@@ -83,7 +84,7 @@ button {
 }
 
 .flex-top-down {
-  display:flex;
+  display: flex;
   flex-flow: column;
 }
 
@@ -102,9 +103,37 @@ button {
   align-items: center;
 }
 
-.flex-end-center{
+.flex-end-center {
   justify-content: flex-end;
   align-items: center;
+}
+
+.dialog-screen {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: row;
+
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: @brightness-30;
+
+  p {
+    color: black;
+  }
+
+
+}
+
+.dialog-about-container {
+  justify-content: space-between;
+}
+
+.dialog-header {
+  justify-content: space-between;
+  color: black;
 }
 
 @media screen and (max-width: 991px) {
@@ -151,6 +180,17 @@ button {
   body {
     background-color: black;
     background-image: none;
+  }
+
+  .link_box_left{
+    display: none;
+  }
+
+  footer{
+    .link_text{
+      visibility: hidden;
+      opacity: 0;
+    }
   }
 }
 
