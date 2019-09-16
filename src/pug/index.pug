@@ -13,17 +13,19 @@ html(lang='en')
 
     title A tradingview dashboard
   body
-    div(class="side-menu-right")
+    div(class="menu-show")
+      button(class="menu-button" onclick="showMenu()")
 
-      div(class="side-menu-container")
+    div(class="side-menu-right")
+      div(class="side-menu-container menu-toggle-show-hide")
         div(class="menu-header")
-          button(class="menu-button")
+          button(class="menu-button" onclick="closeMenu()")
           .menu-caption-container
             p(class="menu-caption") MENU
         div(class="menu-body")
           ul
             li(class="menu-item1")
-              p.item-text item 1
+              a.item-text(href="http://www.google.com") item 1
             li(class="menu-item2")
               p.item-text item 2
             li(class="menu-item3")
@@ -35,7 +37,7 @@ html(lang='en')
 
     div(class="app",id="stock_table")
 
-    script(src="js/app.js")
+    //- script(src="js/app.js")
     script(src="js/test.js")
 
     footer.footer
