@@ -1,39 +1,22 @@
 doctype html
 html(lang='en')
   head
-    include gtag.js
     include meta.pug
+    include gtag.js
+
+    link(rel="preload", href="js/app.js", as="script")
 
     link(rel="preconnect", href="https://s.tradingview.com")
     link(rel="dns-prefetch", href="https://s.tradingview.com")
 
-    link(rel="preload", href="js/app.js", as="script")
     link(rel="stylesheet",href="css/style.css")
+    link(rel="stylesheet",href="css/hamburgers.css")
+
     script(type="text/javascript",src="https://s3.tradingview.com/tv.js")
 
     title A tradingview dashboard
   body
-    div(class="menu-show")
-      button(class="menu-button" onclick="showMenu()")
-
-    div(class="side-menu-right")
-      div(class="side-menu-container menu-toggle-show-hide")
-        div(class="menu-header")
-          button(class="menu-button" onclick="closeMenu()")
-          .menu-caption-container
-            p(class="menu-caption") MENU
-        div(class="menu-body")
-          ul
-            li(class="menu-item1")
-              a.item-text(href="http://www.google.com") item 1
-            li(class="menu-item2")
-              p.item-text item 2
-            li(class="menu-item3")
-              p.item-text item 3
-            li(class="menu-item4")
-              p.item-text item 4
-            li(class="menu-item5")
-              p.item-text item 5
+    include menu_button.html
 
     div(class="app",id="stock_table")
 
