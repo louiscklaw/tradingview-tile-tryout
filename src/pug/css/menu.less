@@ -2,8 +2,8 @@
 
 .nav-menu {
     width: @menu-width;
-    height: 100vh;
-    backdrop-filter: @mid-blur;
+    height: calc(100vh - @footer-height);
+    backdrop-filter: @mid-blur @high-brightness;
     z-index: @z-touchable;
 
     position: fixed;
@@ -59,13 +59,13 @@
     left: @menu-width;
 
     width: calc(100% - @menu-width);
-    height: 100vh;
+    height: calc(100vh - @footer-height);
     background-color: rgba(20, 20, 20, 0.4);
 
     cursor: pointer;
     z-index: @z-touchable;
 
-    backdrop-filter: @mid-blur;
+    backdrop-filter: @high-blur;
 
 
     visibility: hidden;
@@ -76,7 +76,7 @@
 
 .nav-empty-active {
     width: calc(100% - @menu-width);
-    height: 100vh;
+    height: calc(100vh - @footer-height);
 
     visibility: visible;
     opacity: 1;
