@@ -20,12 +20,14 @@
     // transform: translateX(0px);
 }
 
-.hamburger {
+#menu-button {
     position: fixed;
     top: 0px;
     left: 0px;
 
-    transition: 1s;
+    transition: 0.3s;
+
+    background-color: rgba(20, 20, 20, 0.3);
 }
 
 .menu-body li {
@@ -33,25 +35,21 @@
 }
 
 .menu-header {
-    height: 80px;
-}
-
-.menu-item {
-    height: 80px;
+    height: @menu-header-height;
 }
 
 .menu-item:hover {
-    background-color: rgba(128,128,128, 0.2);
+    background-color: rgba(128, 128, 128, 0.2);
 }
 
 .menu-item {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    // background-color: rgba(128,128,128, 0.1);
+    height: @menu-item-height;
 
     text-transform: uppercase;
+}
+
+.menu-item i {
+    padding: 30px;
 }
 
 .nav-empty {
@@ -78,11 +76,10 @@
 
 .menu-caption {
     position: relative;
+    padding: 30px;
+
     left: @menu-button-width;
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
-
-
-
 }
