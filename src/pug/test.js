@@ -20,18 +20,32 @@ function helloworld () {
     alert( 'helloworld' );
 }
 
-var menu_state = true;
+// true=showmenu, false=hidemenu
+const menu_show = true;
+const menu_hide = false;
+var menu_state = menu_hide;
 
 function toggleMenuButton() {
-    menu_state = !( menu_state );
-    if ( menu_state ) {
-        document.querySelector( '.hamburger' ).classList.remove( 'is-active' );
-        document.querySelector( '.nav-menu' ).classList.remove( 'nav-menu-active' );
-        console.log( 'three' );
-
+    if ( menu_state == menu_show ) {
+        hideMenu();
     } else {
-        document.querySelector( '.hamburger' ).classList.add( 'is-active' );
-        console.log( 'close' );
-        document.querySelector( '.nav-menu' ).classList.add( 'nav-menu-active' );
+        showMenu();
     }
+}
+
+function showMenu () {
+    console.log( 'showMenu' );
+    document.querySelector( '.hamburger' ).classList.add( 'is-active' );
+    document.querySelector( '.nav-menu' ).classList.add( 'nav-menu-active' );
+    document.querySelector( '.nav-empty' ).classList.add( 'nav-empty-active' );
+    menu_state = menu_show;
+}
+
+
+function hideMenu () {
+    console.log( 'hideMenu' );
+    document.querySelector( '.hamburger' ).classList.remove( 'is-active' );
+    document.querySelector( '.nav-menu' ).classList.remove( 'nav-menu-active' );
+    document.querySelector( '.nav-empty' ).classList.remove( 'nav-empty-active' );
+    menu_state = menu_hide;
 }
