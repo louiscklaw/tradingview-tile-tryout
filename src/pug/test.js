@@ -1,23 +1,46 @@
-
 var menu_visible = false;
 
-function closeMenu () {
+function closeMenu() {
     console.log( 'closeMenu' );
     document.querySelectorAll( '.menu-toggle-show-hide' )
-    .forEach( ( item ) => {
-        item.classList.add( 'menu-hide' );
-    } );
+        .forEach( ( item ) => {
+            item.classList.add( 'menu-hide' );
+        } );
+
 }
 
-function showMenu () {
+function showMenu() {
     document.querySelectorAll( ".menu-toggle-show-hide" )
-    .forEach( ( item ) => {
-        item.classList.remove( 'menu-hide' );
-    } );
+        .forEach( ( item ) => {
+            item.classList.remove( 'menu-hide' );
+        } );
+
 }
 
-function helloworld () {
+function helloworld() {
     alert( 'helloworld' );
+}
+
+function clickImport () {
+    console.log( 'clickImport' );
+    hideMenu();
+}
+
+function clickExport () {
+    console.log( 'clickExport' );
+    hideMenu();
+}
+
+function clickSettings() {
+    hideMenu();
+}
+
+function clickLogin() {
+    hideMenu();
+}
+
+function clickLogout() {
+    hideMenu();
 }
 
 // true=showmenu, false=hidemenu
@@ -33,7 +56,7 @@ function toggleMenuButton() {
     }
 }
 
-function showMenu () {
+function showMenu() {
     console.log( 'showMenu' );
     document.querySelector( '.hamburger' ).classList.add( 'is-active' );
     document.querySelector( '.nav-menu' ).classList.add( 'nav-menu-active' );
@@ -42,7 +65,7 @@ function showMenu () {
 }
 
 
-function hideMenu () {
+function hideMenu() {
     console.log( 'hideMenu' );
     document.querySelector( '.hamburger' ).classList.remove( 'is-active' );
     document.querySelector( '.nav-menu' ).classList.remove( 'nav-menu-active' );

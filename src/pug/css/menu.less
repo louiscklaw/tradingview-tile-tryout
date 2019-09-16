@@ -3,7 +3,7 @@
 .nav-menu {
     width: @menu-width;
     height: calc(100vh - @footer-height);
-    backdrop-filter: @mid-blur @high-brightness;
+    backdrop-filter: @mid-blur @brightness-60;
     z-index: @z-touchable;
 
     position: fixed;
@@ -26,8 +26,7 @@
     left: 0px;
 
     transition: 0.3s ease-in;
-
-    background-color: rgba(20, 20, 20, 0.3);
+    background-color: rgba(241, 196, 15, 0.3);
 }
 
 .menu-body li {
@@ -44,6 +43,8 @@
 
 .menu-item {
     height: @menu-item-height;
+
+
 
     text-transform: uppercase;
 
@@ -90,4 +91,8 @@
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
+}
+
+.item-text {
+    padding: 30px;
 }
