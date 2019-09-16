@@ -1,6 +1,6 @@
 <div class="flex-left-right" style="justify-content: flex-start;" onclick="closeMenu()">
-    <div class="nav-menu flex-top-down nav-menu-active">
-        <div class="menu-header">
+    <div class="nav-menu flex-top-down">
+        <div class="menu-header flex-left-right">
             <button class="hamburger hamburger--collapse touchable" type="button"
                 style="width: 80px; height: 80px; position: fixed; top:0px; left: 0px;" onclick="toggleMenuButton()">
                 <span class="hamburger-box">
@@ -8,19 +8,25 @@
                 </span>
             </button>
 
+            <div class="menu-caption">
+                <span class="flex-left-right flex-start-center">Menu</span>
+
+            </div>
+
         </div>
+
         <div class="menu-body">
             <ul>
                 <li class="menu-item" onclick="helloworld()">
-                    <span>ITEM1</span></li>
+                    <span><i class="fas fa-cloud-upload-alt"></i>import</span></li>
                 <li class="menu-item">
-                    <span>ITEM2</span></li>
+                    <span><i class="fas fa-download"></i>export</span></li>
                 <li class="menu-item">
-                    <span>ITEM3</span></li>
+                    <span><i class="fas fa-sliders-h"></i>settings</span></li>
                 <li class="menu-item">
-                    <span>ITEM4</span></li>
+                    <span><i class="fas fa-sign-in-alt"></i>login</span></li>
                 <li class="menu-item">
-                    <span>ITEM5</span></li>
+                    <span><i class="fas fa-sign-out-alt"></i>logout</span></li>
             </ul>
         </div>
     </div>
