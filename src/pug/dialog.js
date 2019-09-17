@@ -11,8 +11,9 @@ var swal_about_config =  {
 
     <div class="swal-content>
         <div style=" padding-top: 30px; padding-bottom: 30px;">
-            <a href="https://github.com/louiscklaw/tradingview-tile-tryout" target="_blank">source on GitHub</a><br><br>
-            <a href="http://louiscklaw.github.io" target="_blank"> My homepage </a>
+            <a href="https://github.com/louiscklaw/tradingview-tile-tryout" target="_blank"><i class="fas fa-code-branch"></i>source on GitHub</a><br><br>
+            <a href="http://louiscklaw.github.io" target="_blank"><i class="fas fa-home"></i>My homepage </a><br><br>
+            <a href="https://github.com/louiscklaw/tradingview-tile-tryout/issues" target="_blank"><i class="fas fa-bug"></i>bugs report / feature request</a>
         </div>
     </div>
 </div>`,
@@ -23,6 +24,27 @@ var swal_about_config =  {
 };
 
 var swal_changelog_config = {
+    title: `<div style="color: black;">change log</div>`,
+    type: 'info',
+    html: `
+<div class="swal-container">
+    <div class="swal-subject">
+        history:<br>
+    </div>
+
+    <div class="swal-content">
+        <ul>
+            <li>2019-Sep-17: programming</li>
+        </ul>
+    </div>
+</div>`,
+    showCloseButton: true,
+    focusConfirm: false,
+    confirmButtonText: 'Close',
+    confirmButtonAriaLabel: 'Close dialog',
+};
+
+var swal_import_config = {
     title: `<div style="color: black;">change log</div>`,
     type: 'info',
     html: `
@@ -57,6 +79,10 @@ function showChangeLog() {
     showSwal( swal_changelog_config );
 }
 
-window.onload = function () {
-    showChangeLog();
+function showImport () {
+    showSwal( swal_import_config );
 }
+
+// window.onload = function () {
+//     showChangeLog();
+// }
