@@ -1,31 +1,12 @@
-[
-    "DJ:DJI",
-    "SPX",
-    "NASDAQ:SWIR",
-    "NASDAQ:TXN",
-    "DAX",
-    "CAC40",
-    "NASDAQ:AAPL",
-    "NASDAQ:MSFT",
-    "NASDAQ:FB",
-    "NASDAQ:AMZN",
-    "NASDAQ:GOOGL",
-    "NYSE:STM",
-    "NYSE:LMT",
-    "NYSE:GSK",
-    "NYSE:V",
-    "NYSE:MA",
-    "NYSE:CHT",
-    "NYSE:CHU",
-    "NYSE:SNP",
-    "NYSE:CHL",
-    "NYSE:LFC",
-    "NYSE:CAJ",
-    "NYSE:ABB",
-    "NASDAQ:AMD",
-    "NASDAQ:INTC",
-    "NYSE:LMT",
-    "NYSE:GE",
-    "NYSE:CAT",
-    "NYSE:BA"
-]
+{
+    "topic1": [ "DJ:DJI",
+        "SPX",
+        "NASDAQ:SWIR",
+        "NASDAQ:TXN"
+    ],
+    "topic2": [ "DJ:DJI",
+        "SPX",
+        "NASDAQ:SWIR",
+        "NASDAQ:TXN"
+    ]
+}

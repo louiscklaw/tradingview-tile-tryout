@@ -40,10 +40,15 @@ body {
 }
 
 .app {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // display: grid;
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  display: flex;
+  flex-flow: column;
+  flex-direction: flex-start;
+
 }
 
 .element {
@@ -171,6 +176,13 @@ button {
   i{
     padding: 3px 5px 1px 5px;
   }
+}
+
+.stock_group {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+
 }
 
 @media screen and (max-width: 991px) {
