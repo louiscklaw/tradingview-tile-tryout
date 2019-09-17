@@ -7,7 +7,6 @@
 
 @import "menu.less";
 @import "footer.less";
-@import "dialog.less";
 
 * {
   padding: 0px;
@@ -136,6 +135,35 @@ button {
   color: black;
 }
 
+.swal-container {
+  color: black;
+
+  .swal-caption {
+    color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .swal-subject {
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 20px;
+  }
+
+  .swal-container {
+    color: black;
+  }
+
+  a {
+    color: #2980b9;
+
+  }
+
+  a:hover {
+    color: rgba(41, 128, 185, 0.2);
+  }
+}
+
 @media screen and (max-width: 991px) {
   /* start of large tablet styles */
 
@@ -182,12 +210,12 @@ button {
     background-image: none;
   }
 
-  .link_box_left{
+  .link_box_left {
     display: none;
   }
 
-  footer{
-    .link_text{
+  footer {
+    .link_text {
       visibility: hidden;
       opacity: 0;
     }

@@ -5,7 +5,6 @@ html(lang='en')
     include gtag.js
 
     link(rel="preload", href="js/app.js", as="script")
-
     link(rel="preconnect", href="https://s.tradingview.com")
     link(rel="dns-prefetch", href="https://s.tradingview.com")
 
@@ -13,6 +12,7 @@ html(lang='en')
     link(rel="stylesheet",href="css/hamburgers.css")
 
     script(type="text/javascript",src="https://s3.tradingview.com/tv.js")
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@8")
 
     title A tradingview dashboard
   body
@@ -20,7 +20,7 @@ html(lang='en')
 
     div(class="app",id="stock_table")
 
-    script(src="js/app.js")
+    //- script(src="js/app.js")
     script(src="js/test.js")
 
     include ./inc/dialog_about.pug
