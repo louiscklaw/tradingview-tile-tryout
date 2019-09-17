@@ -1,8 +1,9 @@
 // imports
 @import "var.less";
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css");
 
 @import "menu.less";
@@ -31,7 +32,6 @@ a:hover {
   background: @link-color;
 }
 
-
 body {
   background: url('../img/bg.jpg');
   // background-repeat: no-repeat;
@@ -45,7 +45,6 @@ body {
   grid-row-gap: 0px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
 
 .element {
   width: 100%;
@@ -110,20 +109,14 @@ button {
 .dialog-screen {
   width: 100vw;
   height: 100vh;
-
   display: flex;
   flex-flow: row;
-
   justify-content: center;
   align-items: center;
-
   backdrop-filter: @brightness-30;
-
   p {
     color: black;
   }
-
-
 }
 
 .dialog-about-container {
