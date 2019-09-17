@@ -1,0 +1,3 @@
+
+Sentry.init({ dsn: 'https://409b0491936c4441afa72828467d0e89@sentry.io/1729492' });
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJleGNlcHRfY29sbGVjdC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJcblNlbnRyeS5pbml0KHsgZHNuOiAnaHR0cHM6Ly80MDliMDQ5MTkzNmM0NDQxYWZhNzI4Mjg0NjdkMGU4OUBzZW50cnkuaW8vMTcyOTQ5MicgfSk7XG4iXSwiZmlsZSI6ImV4Y2VwdF9jb2xsZWN0LmpzIn0=
