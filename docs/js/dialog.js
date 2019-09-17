@@ -1,63 +1,63 @@
 
-function showAbout() {
-    hideMenu();
-    console.log( "show about" );
+var swal_about_config =  {
+    title: `<div style="color: black;">About me</div>`,
+    type: 'info',
+    html: `
+<div class="swal-container">
+    <div class="swal-subject">
+        this is a pet project of louiscklaw<br>
+        for details please refer to:
+    </div>
 
-    // document.querySelector( '.dialog-about-container' ).classList.add("show-dialog");
-    Swal.fire( {
-        title: `<div style="color: black;">About me</div>`,
-        type: 'info',
-        html: `
-    <div class="swal-container">
-        <div class="swal-subject">
-            this is a pet project of louiscklaw<br>
-            for details please refer to:
-        </div>
-
-        <div class="swal-content>
-            <div style=" padding-top: 30px; padding-bottom: 30px;">
-                <a href="https://github.com/louiscklaw/tradingview-tile-tryout" target="_blank">source on GitHub</a><br><br>
-                <a href="http://louiscklaw.github.io" target="_blank"> My homepage </a>
-            </div>
+    <div class="swal-content>
+        <div style=" padding-top: 30px; padding-bottom: 30px;">
+            <a href="https://github.com/louiscklaw/tradingview-tile-tryout" target="_blank">source on GitHub</a><br><br>
+            <a href="http://louiscklaw.github.io" target="_blank"> My homepage </a>
         </div>
     </div>
-        `,
-        showCloseButton: true,
-        focusConfirm: false,
-        confirmButtonText: 'Close',
-        confirmButtonAriaLabel: 'Close dialog',
-    } )
+</div>`,
+    showCloseButton: true,
+    focusConfirm: false,
+    confirmButtonText: 'Close',
+    confirmButtonAriaLabel: 'Close dialog',
+};
+
+var swal_changelog_config = {
+    title: `<div style="color: black;">change log</div>`,
+    type: 'info',
+    html: `
+<div class="swal-container">
+    <div class="swal-subject">
+        history:<br>
+    </div>
+
+    <div class="swal-content">
+        <ul>
+            <li>2019-Sep-17: programming</li>
+        </ul>
+    </div>
+</div>`,
+    showCloseButton: true,
+    focusConfirm: false,
+    confirmButtonText: 'Close',
+    confirmButtonAriaLabel: 'Close dialog',
+};
+
+function showSwal ( config_in ) {
+    hideMenu();
+    console.log( 'showSwal' );
+    Swal.fire( config_in );
+}
+
+function showAbout() {
+    showSwal( swal_about_config );
 }
 
 function showChangeLog() {
-    hideMenu();
-    console.log( "show change log" );
-
-    // document.querySelector( '.dialog-about-container' ).classList.add("show-dialog");
-    Swal.fire( {
-        title: `<div style="color: black;">change log</div>`,
-        type: 'info',
-        html: `
-    <div class="swal-container">
-        <div class="swal-subject">
-            history:<br>
-        </div>
-
-        <div class="swal-content">
-            <ul>
-                <li>2019-Sep-17: programming</li>
-            </ul>
-        </div>
-    </div>
-        `,
-        showCloseButton: true,
-        focusConfirm: false,
-        confirmButtonText: 'Close',
-        confirmButtonAriaLabel: 'Close dialog',
-    } )
+    showSwal( swal_changelog_config );
 }
 
 window.onload = function () {
     showChangeLog();
 }
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJkaWFsb2cuanMiXSwic291cmNlc0NvbnRlbnQiOlsiXG5mdW5jdGlvbiBzaG93QWJvdXQoKSB7XG4gICAgaGlkZU1lbnUoKTtcbiAgICBjb25zb2xlLmxvZyggXCJzaG93IGFib3V0XCIgKTtcblxuICAgIC8vIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoICcuZGlhbG9nLWFib3V0LWNvbnRhaW5lcicgKS5jbGFzc0xpc3QuYWRkKFwic2hvdy1kaWFsb2dcIik7XG4gICAgU3dhbC5maXJlKCB7XG4gICAgICAgIHRpdGxlOiBgPGRpdiBzdHlsZT1cImNvbG9yOiBibGFjaztcIj5BYm91dCBtZTwvZGl2PmAsXG4gICAgICAgIHR5cGU6ICdpbmZvJyxcbiAgICAgICAgaHRtbDogYFxuICAgIDxkaXYgY2xhc3M9XCJzd2FsLWNvbnRhaW5lclwiPlxuICAgICAgICA8ZGl2IGNsYXNzPVwic3dhbC1zdWJqZWN0XCI+XG4gICAgICAgICAgICB0aGlzIGlzIGEgcGV0IHByb2plY3Qgb2YgbG91aXNja2xhdzxicj5cbiAgICAgICAgICAgIGZvciBkZXRhaWxzIHBsZWFzZSByZWZlciB0bzpcbiAgICAgICAgPC9kaXY+XG5cbiAgICAgICAgPGRpdiBjbGFzcz1cInN3YWwtY29udGVudD5cbiAgICAgICAgICAgIDxkaXYgc3R5bGU9XCIgcGFkZGluZy10b3A6IDMwcHg7IHBhZGRpbmctYm90dG9tOiAzMHB4O1wiPlxuICAgICAgICAgICAgICAgIDxhIGhyZWY9XCJodHRwczovL2dpdGh1Yi5jb20vbG91aXNja2xhdy90cmFkaW5ndmlldy10aWxlLXRyeW91dFwiIHRhcmdldD1cIl9ibGFua1wiPnNvdXJjZSBvbiBHaXRIdWI8L2E+PGJyPjxicj5cbiAgICAgICAgICAgICAgICA8YSBocmVmPVwiaHR0cDovL2xvdWlzY2tsYXcuZ2l0aHViLmlvXCIgdGFyZ2V0PVwiX2JsYW5rXCI+IE15IGhvbWVwYWdlIDwvYT5cbiAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICA8L2Rpdj5cbiAgICA8L2Rpdj5cbiAgICAgICAgYCxcbiAgICAgICAgc2hvd0Nsb3NlQnV0dG9uOiB0cnVlLFxuICAgICAgICBmb2N1c0NvbmZpcm06IGZhbHNlLFxuICAgICAgICBjb25maXJtQnV0dG9uVGV4dDogJ0Nsb3NlJyxcbiAgICAgICAgY29uZmlybUJ1dHRvbkFyaWFMYWJlbDogJ0Nsb3NlIGRpYWxvZycsXG4gICAgfSApXG59XG5cbmZ1bmN0aW9uIHNob3dDaGFuZ2VMb2coKSB7XG4gICAgaGlkZU1lbnUoKTtcbiAgICBjb25zb2xlLmxvZyggXCJzaG93IGNoYW5nZSBsb2dcIiApO1xuXG4gICAgLy8gZG9jdW1lbnQucXVlcnlTZWxlY3RvciggJy5kaWFsb2ctYWJvdXQtY29udGFpbmVyJyApLmNsYXNzTGlzdC5hZGQoXCJzaG93LWRpYWxvZ1wiKTtcbiAgICBTd2FsLmZpcmUoIHtcbiAgICAgICAgdGl0bGU6IGA8ZGl2IHN0eWxlPVwiY29sb3I6IGJsYWNrO1wiPmNoYW5nZSBsb2c8L2Rpdj5gLFxuICAgICAgICB0eXBlOiAnaW5mbycsXG4gICAgICAgIGh0bWw6IGBcbiAgICA8ZGl2IGNsYXNzPVwic3dhbC1jb250YWluZXJcIj5cbiAgICAgICAgPGRpdiBjbGFzcz1cInN3YWwtc3ViamVjdFwiPlxuICAgICAgICAgICAgaGlzdG9yeTo8YnI+XG4gICAgICAgIDwvZGl2PlxuXG4gICAgICAgIDxkaXYgY2xhc3M9XCJzd2FsLWNvbnRlbnRcIj5cbiAgICAgICAgICAgIDx1bD5cbiAgICAgICAgICAgICAgICA8bGk+MjAxOS1TZXAtMTc6IHByb2dyYW1taW5nPC9saT5cbiAgICAgICAgICAgIDwvdWw+XG4gICAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuICAgICAgICBgLFxuICAgICAgICBzaG93Q2xvc2VCdXR0b246IHRydWUsXG4gICAgICAgIGZvY3VzQ29uZmlybTogZmFsc2UsXG4gICAgICAgIGNvbmZpcm1CdXR0b25UZXh0OiAnQ2xvc2UnLFxuICAgICAgICBjb25maXJtQnV0dG9uQXJpYUxhYmVsOiAnQ2xvc2UgZGlhbG9nJyxcbiAgICB9IClcbn1cblxud2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uICgpIHtcbiAgICBzaG93Q2hhbmdlTG9nKCk7XG59XG4iXSwiZmlsZSI6ImRpYWxvZy5qcyJ9
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJkaWFsb2cuanMiXSwic291cmNlc0NvbnRlbnQiOlsiXG52YXIgc3dhbF9hYm91dF9jb25maWcgPSAge1xuICAgIHRpdGxlOiBgPGRpdiBzdHlsZT1cImNvbG9yOiBibGFjaztcIj5BYm91dCBtZTwvZGl2PmAsXG4gICAgdHlwZTogJ2luZm8nLFxuICAgIGh0bWw6IGBcbjxkaXYgY2xhc3M9XCJzd2FsLWNvbnRhaW5lclwiPlxuICAgIDxkaXYgY2xhc3M9XCJzd2FsLXN1YmplY3RcIj5cbiAgICAgICAgdGhpcyBpcyBhIHBldCBwcm9qZWN0IG9mIGxvdWlzY2tsYXc8YnI+XG4gICAgICAgIGZvciBkZXRhaWxzIHBsZWFzZSByZWZlciB0bzpcbiAgICA8L2Rpdj5cblxuICAgIDxkaXYgY2xhc3M9XCJzd2FsLWNvbnRlbnQ+XG4gICAgICAgIDxkaXYgc3R5bGU9XCIgcGFkZGluZy10b3A6IDMwcHg7IHBhZGRpbmctYm90dG9tOiAzMHB4O1wiPlxuICAgICAgICAgICAgPGEgaHJlZj1cImh0dHBzOi8vZ2l0aHViLmNvbS9sb3Vpc2NrbGF3L3RyYWRpbmd2aWV3LXRpbGUtdHJ5b3V0XCIgdGFyZ2V0PVwiX2JsYW5rXCI+c291cmNlIG9uIEdpdEh1YjwvYT48YnI+PGJyPlxuICAgICAgICAgICAgPGEgaHJlZj1cImh0dHA6Ly9sb3Vpc2NrbGF3LmdpdGh1Yi5pb1wiIHRhcmdldD1cIl9ibGFua1wiPiBNeSBob21lcGFnZSA8L2E+XG4gICAgICAgIDwvZGl2PlxuICAgIDwvZGl2PlxuPC9kaXY+YCxcbiAgICBzaG93Q2xvc2VCdXR0b246IHRydWUsXG4gICAgZm9jdXNDb25maXJtOiBmYWxzZSxcbiAgICBjb25maXJtQnV0dG9uVGV4dDogJ0Nsb3NlJyxcbiAgICBjb25maXJtQnV0dG9uQXJpYUxhYmVsOiAnQ2xvc2UgZGlhbG9nJyxcbn07XG5cbnZhciBzd2FsX2NoYW5nZWxvZ19jb25maWcgPSB7XG4gICAgdGl0bGU6IGA8ZGl2IHN0eWxlPVwiY29sb3I6IGJsYWNrO1wiPmNoYW5nZSBsb2c8L2Rpdj5gLFxuICAgIHR5cGU6ICdpbmZvJyxcbiAgICBodG1sOiBgXG48ZGl2IGNsYXNzPVwic3dhbC1jb250YWluZXJcIj5cbiAgICA8ZGl2IGNsYXNzPVwic3dhbC1zdWJqZWN0XCI+XG4gICAgICAgIGhpc3Rvcnk6PGJyPlxuICAgIDwvZGl2PlxuXG4gICAgPGRpdiBjbGFzcz1cInN3YWwtY29udGVudFwiPlxuICAgICAgICA8dWw+XG4gICAgICAgICAgICA8bGk+MjAxOS1TZXAtMTc6IHByb2dyYW1taW5nPC9saT5cbiAgICAgICAgPC91bD5cbiAgICA8L2Rpdj5cbjwvZGl2PmAsXG4gICAgc2hvd0Nsb3NlQnV0dG9uOiB0cnVlLFxuICAgIGZvY3VzQ29uZmlybTogZmFsc2UsXG4gICAgY29uZmlybUJ1dHRvblRleHQ6ICdDbG9zZScsXG4gICAgY29uZmlybUJ1dHRvbkFyaWFMYWJlbDogJ0Nsb3NlIGRpYWxvZycsXG59O1xuXG5mdW5jdGlvbiBzaG93U3dhbCAoIGNvbmZpZ19pbiApIHtcbiAgICBoaWRlTWVudSgpO1xuICAgIGNvbnNvbGUubG9nKCAnc2hvd1N3YWwnICk7XG4gICAgU3dhbC5maXJlKCBjb25maWdfaW4gKTtcbn1cblxuZnVuY3Rpb24gc2hvd0Fib3V0KCkge1xuICAgIHNob3dTd2FsKCBzd2FsX2Fib3V0X2NvbmZpZyApO1xufVxuXG5mdW5jdGlvbiBzaG93Q2hhbmdlTG9nKCkge1xuICAgIHNob3dTd2FsKCBzd2FsX2NoYW5nZWxvZ19jb25maWcgKTtcbn1cblxud2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uICgpIHtcbiAgICBzaG93Q2hhbmdlTG9nKCk7XG59XG4iXSwiZmlsZSI6ImRpYWxvZy5qcyJ9
