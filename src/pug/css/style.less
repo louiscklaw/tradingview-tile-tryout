@@ -47,14 +47,17 @@ body {
 
   display: flex;
   flex-flow: column;
-  flex-direction: flex-start;
+
 
 }
 
+
 .element {
   width: 100%;
+  // width: 200px;
   /* height: 210px; */
   /* background-color: #050505; */
+
 }
 
 .test_container {
@@ -119,6 +122,7 @@ button {
   justify-content: center;
   align-items: center;
   backdrop-filter: @brightness-30;
+
   p {
     color: black;
   }
@@ -152,12 +156,12 @@ button {
     color: black;
   }
 
-  .swal-content{
+  .swal-content {
     text-align: left;
     padding-left: 40px;
     padding-right: 40px;
 
-    li{
+    li {
       color: black;
       list-style: none;
     }
@@ -165,24 +169,51 @@ button {
 
   }
 
-  a, i {
+  a,
+  i {
     color: #2980b9;
 
   }
-  a:hover, i:hover {
+
+  a:hover,
+  i:hover {
     color: rgba(41, 128, 185, 0.2);
   }
 
-  i{
+  i {
     padding: 3px 5px 1px 5px;
   }
 }
 
 .stock_group {
-  display: flex;
-  flex-flow: row;
-  justify-content: flex-start;
+  // display: flex;
+  // flex-flow: row;
+  // justify-content: flex-start;
+  // flex-wrap: wrap;
 
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+
+
+  .draggable-source--is-dragging {
+    background-color: grey;
+    max-width: 50%;
+  }
+
+  .draggable-mirror {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+}
+
+.draggable-container--is-dragging {
+  .element {
+    // background-color: red;
+    max-width: 200px;
+  }
 }
 
 @media screen and (max-width: 991px) {

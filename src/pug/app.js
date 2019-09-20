@@ -16,7 +16,7 @@ var cell_template = `
     <div class="test_container">
         <div class="link_container">
         <div class="stock_link">
-            <a href="www.google.com">$stock_name$</a>
+            <a href="www.google.com">$stock_name$</a><br>
             <a href="www.google.com">google</a>
             <a href="www.yahoo.com">yahoo</a>
             <a href="www.aastocks.com">aastocks</a>
@@ -181,9 +181,13 @@ async function load_tv () {
 function init_draggable () {
     console.log( 'init_draggable' );
 
-    const draggable = new Draggable.Sortable( document.querySelector( '.stock_group' ), {
-        draggable: '.element'
-    } );
+    document.querySelectorAll( '.stock_group' ).forEach( ele_stock_group => {
+        new Draggable.Sortable( ele_stock_group, { draggable: '.element' } );
+    })
+
+    // const draggable = new Draggable.Sortable( document.querySelector( '.stock_group' ), {
+    //     draggable: '.element'
+    // } );
 
 }
 
