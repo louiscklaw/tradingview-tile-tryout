@@ -1,12 +1,25 @@
 {
-    "topic1": [ "DJ:DJI",
+    "INDEX": [ "DJ:DJI",
         "SPX",
-        "NASDAQ:SWIR",
-        "NASDAQ:TXN"
+        "DAX",
+        "CAC40"
     ],
-    "topic2": [ "DJ:DJI",
-        "SPX",
-        "NASDAQ:SWIR",
-        "NASDAQ:TXN"
-    ]
+    "FAAMG": [
+        "NASDAQ:FB",
+        "NASDAQ:AAPL",
+        "NASDAQ:AMZN",
+        "NASDAQ:MSFT",
+        "NASDAQ:GOOGL"
+    ],
+    "ELECTRONICS": [
+        "NASDAQ:SWIR", "NYSE:STM", "NASDAQ:INTC", "NASDAQ:AMD", "NYSE:GE", "NYSE:CAJ"
+    ],
+    "MILITARY": [ "NYSE:LMT" ],
+    "INDUSTRIAL": [ "NYSE:CAT", "NYSE:ABB" ],
+    "DRUGS": [ "NYSE:GSK" ],
+    "Telecom": [ "NYSE:CHT", "NYSE:CHU", "NYSE:CHL" ],
+    "MONEY": [ "NYSE:V", "NYSE:MA" ],
+    "RESOURCES": [ "NYSE:SNP" ],
+    "Insurance": [ "NYSE:LFC" ],
+    "Aerospace": [ "NYSE:BA" ]
 }
