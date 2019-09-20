@@ -12,23 +12,26 @@ var queue_to_render_script = [];
 var stock_cell_table = {};
 
 var cell_template = `
-<div id="$tv_id$_cell" class="element">
-    <div class="test_container">
-        <div class="link_container">
-        <div class="stock_link">
-            <a href="www.google.com">$stock_name$</a>
-            <a href="www.google.com">google</a>
-            <a href="www.yahoo.com">yahoo</a>
-            <a href="www.aastocks.com">aastocks</a>
-        </div>
-        <div class="tradingview-widget-container">
-            <div id="$tv_id$"></div>
-        </div>
+<div class="tv_draggable">
+    <div id="$tv_id$_cell" class="element">
+        <div class="test_container">
+            <div class="link_container">
+            <div class="stock_link">
+                <a href="www.google.com">$stock_name$</a>
+                <a href="www.google.com">google</a>
+                <a href="www.yahoo.com">yahoo</a>
+                <a href="www.aastocks.com">aastocks</a>
+            </div>
+            <div class="tradingview-widget-container">
+                <div id="$tv_id$"></div>
+            </div>
+            </div>
         </div>
     </div>
-</div>`;
+</div>
+`;
 
-var topic_group_template = `    <div class="topic_group">
+var topic_group_template = `<div class="topic_group">
 <div class="topic_cell">
     $topic_name$
 </div>
@@ -135,7 +138,7 @@ function start_render_table( stock_list ) {
 
 }
 
-window.onload = function () {
+function load_tv () {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -176,14 +179,21 @@ window.onload = function () {
             queue_to_render_script.forEach( x => {
                 render_tv_script( x[0], x[1] );
             } );
-
-
-
             // start_render_table( stock_list );
-
         }
     };
     xhttp.open( "GET", url, true );
     xhttp.send();
 
+}
+
+function init_draggable () {
+    const draggable = new Draggable.Sortable( document.querySelector( '.stock_group' ), {
+        draggable: '.tv_graph'
+    } );
+}
+
+window.onload = function () {
+    // load_tv();
+    init_draggable();
 }

@@ -16,17 +16,23 @@ html(lang='en')
 
     script(type="text/javascript",src="https://browser.sentry-cdn.com/5.6.3/bundle.min.js")
 
+    script(src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js")
+
+
     title A tradingview dashboard
 
   body
     include menu_button.html
 
-    div(class="app",id="stock_table")
+    include stock_table_dummy.html
+
+    //- script(src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js")
 
     script(src="js/except_collect.js")
     script(src="js/app.js")
     script(src="js/test.js")
     script(src="js/dialog.js")
+
 
     footer.footer
       .footer_container
