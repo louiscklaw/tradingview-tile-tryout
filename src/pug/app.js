@@ -52,7 +52,7 @@ function makeid( length ) {
 }
 
 
-function render_topic_group ( topic_name, stock_list_html ) {
+function render_topic_group( topic_name, stock_list_html ) {
     return topic_group_template
         .replace( '$topic_name$', topic_name )
         .replace( '$stock_list$', stock_list_html );
@@ -111,21 +111,22 @@ function render_tv_script( colon_stock_code, tv_id ) {
         "container_id": tv_id
     } );
 }
-function gen_table(stock_list) {
+
+function gen_table( stock_list ) {
     console.log( 'calling gen_table' );
     return stock_list.map( x => {
         return render_html( x, stock_tvid[ x ] )
     } );
 }
 
-function render_table ( stock_list ) {
+function render_table( stock_list ) {
     console.log( "calling render_table" );
-    return gen_table(stock_list).join( '' );
+    return gen_table( stock_list ).join( '' );
 }
 
-function render_stock_table_html ( stock_list ) {
+function render_stock_table_html( stock_list ) {
     console.log( 'calling render_stock_table_html' );
-    return  render_table(stock_list);
+    return render_table( stock_list );
 }
 
 function start_render_table( stock_list ) {
@@ -139,6 +140,46 @@ function start_render_table( stock_list ) {
 }
 
 function load_tv () {
+    console.log( url );
+    fetch( url )
+        .then( res => {
+            return res.json();
+        } )
+        .then( res_json => {
+            console.log( res_json );
+
+            topic_html = '';
+
+            Object.keys( res_json ).forEach( topic_name => {
+                // for topic_name
+                console.log( topic_name );
+
+                stock_list_html = '';
+                // gen html inside
+                res_json[topic_name].forEach( stock_code => {
+                    console.log( stock_code );
+                    stock_tvid[stock_code] = 'tv_' + makeid( 10 );
+
+                    stock_list_html = stock_list_html + render_html( stock_code, stock_tvid[stock_code] );
+
+                    queue_to_render_script.push( [ stock_code, stock_tvid[ stock_code ] ] );
+                })
+                topic_html = topic_html + render_topic_group( topic_name, stock_list_html );
+
+                // join html inside
+                // encape by topic name
+            })
+
+            document.querySelector( '.app' ).innerHTML = topic_html;
+
+            queue_to_render_script.forEach( x => {
+                render_tv_script( x[ 0 ], x[ 1 ] );
+            } );
+
+        } );
+}
+
+function load_tv_to_delete() {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -149,35 +190,35 @@ function load_tv () {
             topic_name = '';
             topic_html = '';
 
-            Object.keys(stock_list).forEach( topic_name => {
+            Object.keys( stock_list ).forEach( topic_name => {
                 console.log( topic_name );
 
                 stock_list_html = '';
 
                 // render tv_graph
                 // render html
-                stock_list[topic_name].forEach( stock_code => {
+                stock_list[ topic_name ].forEach( stock_code => {
                     // init tvid
-                    stock_tvid[stock_code] = 'tv_' + makeid( 10 );
+                    stock_tvid[ stock_code ] = 'tv_' + makeid( 10 );
 
-                    stock_list_html = stock_list_html + render_html(stock_code, stock_tvid[stock_code] );
+                    stock_list_html = stock_list_html + render_html( stock_code, stock_tvid[ stock_code ] );
 
 
                     // // render javascript
-                    queue_to_render_script.push( [stock_code, stock_tvid[stock_code]] );
+                    queue_to_render_script.push( [ stock_code, stock_tvid[ stock_code ] ] );
 
-                })
+                } )
 
                 // render topic_group
                 // glue tv_graph into topic_group
-                topic_html = topic_html+ render_topic_group( topic_name, stock_list_html );
+                topic_html = topic_html + render_topic_group( topic_name, stock_list_html );
 
-            })
+            } )
             // output
             document.querySelector( '.app' ).innerHTML = topic_html;
 
             queue_to_render_script.forEach( x => {
-                render_tv_script( x[0], x[1] );
+                render_tv_script( x[ 0 ], x[ 1 ] );
             } );
             // start_render_table( stock_list );
         }
@@ -187,13 +228,13 @@ function load_tv () {
 
 }
 
-function init_draggable () {
+function init_draggable() {
     const draggable = new Draggable.Sortable( document.querySelector( '.stock_group' ), {
         draggable: '.tv_graph'
     } );
 }
 
-function gen_tv_graph () {
+function gen_tv_graph() {
     var test_content = `<div class="topic_group">
     <div class="topic_cell">
         xxx
@@ -204,7 +245,6 @@ function gen_tv_graph () {
             <div class="tradingview-widget-container">
               <div id="tradingview_dff8a"></div>
               <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-GOOG/" rel="noopener" target="_blank"><span class="blue-text">GOOG Chart</span></a> by TradingView</div>
-              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 
             </div>
             <!-- TradingView Widget END --></div>
@@ -235,13 +275,9 @@ function gen_tv_graph () {
     document.querySelector( '.app' ).innerHTML = test_content;
 }
 
-window.onload = function () {
-    // load_tv();
-    gen_tv_graph();
-    init_draggable();
+function gen_tv_script() {
 
-    new TradingView.widget(
-        {
+    new TradingView.widget( {
         "width": 200,
         "height": 200,
         "symbol": "NASDAQ:GOOG",
@@ -256,6 +292,14 @@ window.onload = function () {
         "hide_legend": true,
         "save_image": false,
         "container_id": "tradingview_dff8a"
-      }
-        );
+    } );
+}
+
+window.onload = function () {
+    load_tv();
+    // gen_tv_graph();
+    // gen_tv_script();
+
+    // init_draggable();
+
 }
