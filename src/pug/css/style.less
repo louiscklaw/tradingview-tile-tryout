@@ -42,6 +42,13 @@ body {
 .app {
   display: flex;
   flex-flow: column;
+
+  .topic_cell {
+    padding-top: 30px;
+    font-size: 2em;
+    background-color: rgba(128,128,128,0.5);
+  }
+
 }
 
 
@@ -187,7 +194,7 @@ button {
 
   display: grid;
   grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
 
 
   .draggable-source--is-dragging {
