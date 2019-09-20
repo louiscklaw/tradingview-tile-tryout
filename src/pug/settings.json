@@ -1,31 +1,25 @@
-[
-    "DJ:DJI",
-    "SPX",
-    "NASDAQ:SWIR",
-    "NASDAQ:TXN",
-    "DAX",
-    "CAC40",
-    "NASDAQ:AAPL",
-    "NASDAQ:MSFT",
-    "NASDAQ:FB",
-    "NASDAQ:AMZN",
-    "NASDAQ:GOOGL",
-    "NYSE:STM",
-    "NYSE:LMT",
-    "NYSE:GSK",
-    "NYSE:V",
-    "NYSE:MA",
-    "NYSE:CHT",
-    "NYSE:CHU",
-    "NYSE:SNP",
-    "NYSE:CHL",
-    "NYSE:LFC",
-    "NYSE:CAJ",
-    "NYSE:ABB",
-    "NASDAQ:AMD",
-    "NASDAQ:INTC",
-    "NYSE:LMT",
-    "NYSE:GE",
-    "NYSE:CAT",
-    "NYSE:BA"
-]
+{
+    "INDEX": [ "DJ:DJI",
+        "SPX",
+        "DAX",
+        "CAC40"
+    ],
+    "FAAMG": [
+        "NASDAQ:FB",
+        "NASDAQ:AAPL",
+        "NASDAQ:AMZN",
+        "NASDAQ:MSFT",
+        "NASDAQ:GOOGL"
+    ],
+    "ELECTRONICS": [
+        "NASDAQ:SWIR", "NYSE:STM", "NASDAQ:INTC", "NASDAQ:AMD", "NYSE:GE", "NYSE:CAJ"
+    ],
+    "MILITARY": [ "NYSE:LMT" ],
+    "INDUSTRIAL": [ "NYSE:CAT", "NYSE:ABB" ],
+    "DRUGS": [ "NYSE:GSK" ],
+    "Telecom": [ "NYSE:CHT", "NYSE:CHU", "NYSE:CHL" ],
+    "MONEY": [ "NYSE:V", "NYSE:MA" ],
+    "RESOURCES": [ "NYSE:SNP" ],
+    "Insurance": [ "NYSE:LFC" ],
+    "Aerospace": [ "NYSE:BA" ]
+}

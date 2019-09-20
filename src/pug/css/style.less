@@ -1,8 +1,9 @@
 // imports
 @import "var.less";
 
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css");
 
 @import "menu.less";
@@ -31,7 +32,6 @@ a:hover {
   background: @link-color;
 }
 
-
 body {
   background: url('../img/bg.jpg');
   // background-repeat: no-repeat;
@@ -40,17 +40,25 @@ body {
 }
 
 .app {
-  display: grid;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-flow: column;
+
+  .topic_cell {
+    padding-top: 30px;
+    font-size: 2em;
+    background-color: rgba(128,128,128,0.5);
+  }
+
 }
 
 
 .element {
   width: 100%;
+  height: 250px;
+  // width: 200px;
   /* height: 210px; */
   /* background-color: #050505; */
+
 }
 
 .test_container {
@@ -110,20 +118,15 @@ button {
 .dialog-screen {
   width: 100vw;
   height: 100vh;
-
   display: flex;
   flex-flow: row;
-
   justify-content: center;
   align-items: center;
-
   backdrop-filter: @brightness-30;
 
   p {
     color: black;
   }
-
-
 }
 
 .dialog-about-container {
@@ -154,13 +157,63 @@ button {
     color: black;
   }
 
-  a {
+  .swal-content {
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 40px;
+
+    li {
+      color: black;
+      list-style: none;
+    }
+
+
+  }
+
+  a,
+  i {
     color: #2980b9;
 
   }
 
-  a:hover {
+  a:hover,
+  i:hover {
     color: rgba(41, 128, 185, 0.2);
+  }
+
+  i {
+    padding: 3px 5px 1px 5px;
+  }
+}
+
+.stock_group {
+  // display: flex;
+  // flex-flow: row;
+  // justify-content: flex-start;
+  // flex-wrap: wrap;
+
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+
+
+  .draggable-source--is-dragging {
+    background-color: grey;
+    max-width: 50%;
+  }
+
+  .draggable-mirror {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+}
+
+.draggable-container--is-dragging {
+  .element {
+    // background-color: red;
+    max-width: 200px;
   }
 }
 
