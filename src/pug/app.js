@@ -12,11 +12,11 @@ var queue_to_render_script = [];
 var stock_cell_table = {};
 
 var cell_template = `
-<div class="tv_draggable">
+<div class="tv_graph">
     <div id="$tv_id$_cell" class="element">
         <div class="test_container">
             <div class="link_container">
-            <div class="stock_link">
+            <div class="stock_link" style="display: none;">
                 <a href="www.google.com">$stock_name$</a>
                 <a href="www.google.com">google</a>
                 <a href="www.yahoo.com">yahoo</a>
@@ -174,7 +174,7 @@ function load_tv () {
 
             })
             // output
-            document.querySelector( '#stock_table' ).innerHTML = topic_html;
+            document.querySelector( '.app' ).innerHTML = topic_html;
 
             queue_to_render_script.forEach( x => {
                 render_tv_script( x[0], x[1] );
@@ -193,7 +193,69 @@ function init_draggable () {
     } );
 }
 
+function gen_tv_graph () {
+    var test_content = `<div class="topic_group">
+    <div class="topic_cell">
+        xxx
+    </div>
+    <div class="stock_group">
+        <div class="tv_graph" style="background-color: red;">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+              <div id="tradingview_dff8a"></div>
+              <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-GOOG/" rel="noopener" target="_blank"><span class="blue-text">GOOG Chart</span></a> by TradingView</div>
+              <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+
+            </div>
+            <!-- TradingView Widget END --></div>
+        <div class="tv_graph">2</div>
+        <div class="tv_graph">3</div>
+        <div class="tv_graph">4</div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+    </div>
+</div>
+<div class="topic_group">
+    <div class="topic_cell">
+        xxx
+    </div>
+    <div class="stock_group">
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+        <div class="tv_graph"></div>
+    </div>
+</div>
+`;
+
+    document.querySelector( '.app' ).innerHTML = test_content;
+}
+
 window.onload = function () {
     // load_tv();
+    gen_tv_graph();
     init_draggable();
+
+    new TradingView.widget(
+        {
+        "width": 200,
+        "height": 200,
+        "symbol": "NASDAQ:GOOG",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "hide_top_toolbar": true,
+        "hide_legend": true,
+        "save_image": false,
+        "container_id": "tradingview_dff8a"
+      }
+        );
 }
