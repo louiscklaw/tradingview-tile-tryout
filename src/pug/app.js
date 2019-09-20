@@ -16,7 +16,7 @@ var cell_template = `
     <div id="$tv_id$_cell" class="element">
         <div class="test_container">
             <div class="link_container">
-            <div class="stock_link" style="display: none;">
+            <div class="stock_link">
                 <a href="www.google.com">$stock_name$</a>
                 <a href="www.google.com">google</a>
                 <a href="www.yahoo.com">yahoo</a>
@@ -139,9 +139,9 @@ function start_render_table( stock_list ) {
 
 }
 
-function load_tv () {
+async function load_tv () {
     console.log( url );
-    fetch( url )
+    await fetch( url )
         .then( res => {
             return res.json();
         } )
@@ -177,6 +177,8 @@ function load_tv () {
             } );
 
         } );
+
+
 }
 
 function load_tv_to_delete() {
@@ -296,10 +298,8 @@ function gen_tv_script() {
 }
 
 window.onload = function () {
-    load_tv();
-    // gen_tv_graph();
-    // gen_tv_script();
-
-    // init_draggable();
+    load_tv().then( res => {
+        init_draggable();
+    });
 
 }
